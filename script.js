@@ -13,6 +13,49 @@ document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', 
     navMenu.classList.remove('active');
 }));
 
+// Dynamic counter animation for projects and books
+function countProjectsAndBooks() {
+    // Count projects with web links (project-link elements)
+    const projectLinks = document.querySelectorAll('.project-link');
+    const uniqueProjects = new Set();
+    
+    // Get unique projects by counting project cards with links
+    document.querySelectorAll('.project-card').forEach(card => {
+        const links = card.querySelectorAll('.project-link');
+        if (links.length > 0) {
+            uniqueProjects.add(card);
+        }
+    });
+    
+    // Count textbooks (always 2 as specified)
+    const textbooksCount = 2;
+    const projectsCount = uniqueProjects.size;
+    
+    // Animate counters
+    animateCounter('projects-count', projectsCount);
+    animateCounter('books-count', textbooksCount);
+}
+
+function animateCounter(elementId, targetCount) {
+    const element = document.getElementById(elementId);
+    if (!element) return;
+    
+    let currentCount = 0;
+    const increment = Math.max(1, Math.ceil(targetCount / 20));
+    const duration = 1500; // 1.5 seconds
+    const stepTime = duration / (targetCount / increment);
+    
+    const timer = setInterval(() => {
+        currentCount += increment;
+        if (currentCount >= targetCount) {
+            element.textContent = targetCount;
+            clearInterval(timer);
+        } else {
+            element.textContent = currentCount;
+        }
+    }, stepTime);
+}
+
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -56,7 +99,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe elements for animation
-const animateElements = document.querySelectorAll('.project-card, .game-card, .publication-card, .about-content, .teaching-content');
+const animateElements = document.querySelectorAll('.project-card, .game-card, .publication-card, .teaching-content');
 animateElements.forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(30px)';
@@ -307,6 +350,9 @@ window.addEventListener('load', () => {
             heroVisual.style.transform = 'translateX(0)';
         }, 400);
     }
+    
+    // Initialize dynamic counting
+    countProjectsAndBooks();
 });
 
 // Add focus trap for accessibility
