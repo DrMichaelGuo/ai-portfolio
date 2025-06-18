@@ -568,35 +568,82 @@ body {
     background: rgba(255, 255, 255, 0.3);
 }
 
-/* Teaching Section */
-.teaching {
+/* AI Teaching Assistants Section */
+.ai-teaching {
     padding: var(--spacing-24) 0;
     background: var(--white);
 }
 
-.teaching-content {
-    display: grid;
-    gap: var(--spacing-16);
-}
-
-.teaching-main {
-    text-align: center;
+.ai-teaching-content {
     max-width: 800px;
     margin: 0 auto;
+    text-align: center;
 }
 
-.teaching-main h3 {
-    font-size: var(--font-size-3xl);
-    font-weight: 600;
+.ai-teaching-main {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--white);
+    padding: var(--spacing-16) var(--spacing-8);
+    border-radius: var(--radius-2xl);
+    box-shadow: var(--shadow-xl);
+    position: relative;
+    overflow: hidden;
+}
+
+.ai-teaching-main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.ai-teaching-icon {
+    font-size: var(--font-size-6xl);
     margin-bottom: var(--spacing-6);
-    color: var(--gray-900);
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
 }
 
-.teaching-main p {
+.ai-teaching-main h3 {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-6);
+    position: relative;
+    z-index: 1;
+}
+
+.ai-teaching-main p {
     font-size: var(--font-size-lg);
-    color: var(--gray-600);
-    margin-bottom: var(--spacing-8);
     line-height: 1.7;
+    margin-bottom: var(--spacing-8);
+    opacity: 0.95;
+    position: relative;
+    z-index: 1;
+}
+
+.ai-teaching-main .btn {
+    position: relative;
+    z-index: 1;
+    background: var(--white);
+    color: var(--primary-color);
+    font-weight: 600;
+    box-shadow: var(--shadow-lg);
+}
+
+.ai-teaching-main .btn:hover {
+    background: var(--gray-50);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Games Section */
+.games-section {
+    padding: var(--spacing-24) 0;
+    background: var(--gray-50);
 }
 
 .games-grid {
