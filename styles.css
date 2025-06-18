@@ -730,6 +730,16 @@ body {
     box-shadow: var(--shadow-lg);
 }
 
+.publication-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.publication-link:hover {
+    color: inherit;
+}
+
 .publication-year {
     position: absolute;
     top: var(--spacing-4);
@@ -748,6 +758,11 @@ body {
     margin-bottom: var(--spacing-3);
     color: var(--gray-900);
     padding-right: var(--spacing-16);
+    transition: var(--transition-fast);
+}
+
+.publication-link:hover h3 {
+    color: var(--primary-color);
 }
 
 .publisher {
