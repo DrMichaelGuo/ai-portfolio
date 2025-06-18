@@ -597,7 +597,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
     opacity: 0.3;
     pointer-events: none;
 }
@@ -776,94 +776,60 @@ body {
 }
 
 .contact-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-16);
-    align-items: start;
-}
-
-.contact-info h3 {
-    font-size: var(--font-size-2xl);
-    font-weight: 600;
-    margin-bottom: var(--spacing-4);
-    color: var(--gray-900);
-}
-
-.contact-info p {
-    color: var(--gray-600);
-    margin-bottom: var(--spacing-8);
-    line-height: 1.7;
-}
-
-.contact-methods {
     display: flex;
-    flex-direction: column;
-    gap: var(--spacing-6);
+    justify-content: center;
+    align-items: center;
 }
 
-.contact-method {
+.contact-linkedin {
+    max-width: 400px;
+    width: 100%;
+}
+
+.linkedin-card {
     display: flex;
     align-items: center;
     gap: var(--spacing-4);
+    padding: var(--spacing-6);
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-xl);
+    text-decoration: none;
+    transition: var(--transition-normal);
+    box-shadow: var(--shadow-sm);
 }
 
-.method-icon {
-    font-size: var(--font-size-xl);
+.linkedin-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    border-color: #0077B5;
+}
+
+.linkedin-icon {
     width: 50px;
     height: 50px;
-    background: var(--gray-100);
+    background: #0077B5;
+    color: var(--white);
     border-radius: var(--radius-lg);
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: 700;
+    font-size: var(--font-size-lg);
+    font-family: Georgia, serif;
 }
 
-.method-content h4 {
-    font-size: var(--font-size-base);
+.linkedin-text h3 {
+    font-size: var(--font-size-lg);
     font-weight: 600;
-    margin-bottom: var(--spacing-1);
     color: var(--gray-900);
+    margin: 0 0 var(--spacing-1) 0;
 }
 
-.method-content p {
+.linkedin-text p {
+    font-size: var(--font-size-base);
     color: var(--gray-600);
     margin: 0;
-}
-
-.contact-form {
-    background: var(--gray-50);
-    padding: var(--spacing-8);
-    border-radius: var(--radius-xl);
-}
-
-.form-group {
-    margin-bottom: var(--spacing-6);
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: var(--spacing-4);
-    border: 1px solid var(--gray-300);
-    border-radius: var(--radius-lg);
-    font-family: var(--font-family);
-    font-size: var(--font-size-base);
-    transition: var(--transition-fast);
-    background: var(--white);
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 120px;
 }
 
 /* Footer */
@@ -1009,6 +975,20 @@ body {
     
     .games-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-8);
+        text-align: center;
+    }
+    
+    .contact-method {
+        justify-content: center;
+    }
+    
+    .cta-card {
+        max-width: 100%;
     }
     
     .footer-content {
