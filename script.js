@@ -15,25 +15,15 @@ document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', 
 
 // Dynamic counter animation for projects and books
 function countProjectsAndBooks() {
-    // Count projects with web links (project-link elements)
-    const projectLinks = document.querySelectorAll('.project-link');
-    const uniqueProjects = new Set();
-    
-    // Get unique projects by counting project cards with links
-    document.querySelectorAll('.project-card').forEach(card => {
-        const links = card.querySelectorAll('.project-link');
-        if (links.length > 0) {
-            uniqueProjects.add(card);
-        }
-    });
+    // Set projects count to 15 as requested
+    const projectsCount = 15;
     
     // Count textbooks (always 2 as specified)
     const textbooksCount = 2;
-    const projectsCount = uniqueProjects.size;
     
     // Animate counters
     animateCounter('projects-count', projectsCount);
-    animateCounter('books-count', textbooksCount);
+    animateCounter('textbooks-count', textbooksCount);
 }
 
 function animateCounter(elementId, targetCount) {
