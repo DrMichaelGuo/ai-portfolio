@@ -698,6 +698,7 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: var(--spacing-6);
+    align-items: stretch; /* Make all grid items the same height */
 }
 
 .game-card {
@@ -707,6 +708,9 @@ body {
     padding: var(--spacing-6);
     text-align: center;
     transition: var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+    min-height: 280px; /* Set minimum height for consistency */
 }
 
 .game-card:hover {
@@ -723,6 +727,7 @@ body {
     box-shadow: var(--shadow-xl);
     position: relative;
     overflow: hidden;
+    min-height: 300px; /* Slightly taller for the featured card */
 }
 
 .game-card.featured-game::before {
@@ -761,9 +766,10 @@ body {
 
 .game-card.featured-game p {
     color: rgba(255, 255, 255, 0.9);
-    margin-bottom: var(--spacing-6);
+    margin-bottom: auto; /* Push button to bottom */
     font-size: var(--font-size-base);
     line-height: 1.6;
+    flex-grow: 1; /* Take up available space */
 }
 
 .featured-link {
@@ -772,13 +778,7 @@ body {
     font-weight: 600;
     padding: var(--spacing-3) var(--spacing-6);
     box-shadow: var(--shadow-md);
-}
-
-.featured-link:hover {
-    background: var(--gray-50) !important;
-    color: #1565C0 !important;
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
+    margin-top: auto; /* Push to bottom */
 }
 
 .game-icon {
@@ -796,8 +796,9 @@ body {
 
 .game-card p {
     color: var(--gray-600);
-    margin-bottom: var(--spacing-4);
+    margin-bottom: auto; /* Push button to bottom */
     font-size: var(--font-size-sm);
+    flex-grow: 1; /* Take up available space */
 }
 
 .game-link {
@@ -810,11 +811,7 @@ body {
     font-size: var(--font-size-sm);
     font-weight: 500;
     transition: var(--transition-fast);
-}
-
-.game-link:hover {
-    background: #0056D3;
-    transform: translateY(-1px);
+    margin-top: auto; /* Push to bottom */
 }
 
 /* Publications Section */
