@@ -15,8 +15,14 @@ document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', 
 
 // Dynamic counter animation for projects and books
 function countProjectsAndBooks() {
-    // Set projects count to ??? as requested
-    const projectsCount = 14;
+    // Dynamically count cards in projects, AITA, and games sections
+    const projectCards = document.querySelectorAll('.project-card').length;
+    const aitaCards = document.querySelectorAll('.aita-card').length;
+    const overviewCards = document.querySelectorAll('.overview-card').length;
+    const gameCards = document.querySelectorAll('.game-card').length;
+    
+    // Calculate total count of all cards
+    const projectsCount = projectCards + aitaCards + overviewCards + gameCards;
     
     // Count textbooks (always 2 as specified)
     const textbooksCount = 2;
