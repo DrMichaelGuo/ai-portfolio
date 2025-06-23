@@ -946,8 +946,8 @@ body {
     gap: var(--spacing-4);
     padding: var(--spacing-6);
     background: var(--white);
-    border: 1px solid var(--gray-200);
-    border-radius: var(--radius-xl);
+    border: 2px solid var(--primary-color);
+    border-radius: var(--radius-2xl);
     text-decoration: none;
     transition: var(--transition-normal);
     box-shadow: var(--shadow-sm);
@@ -956,25 +956,26 @@ body {
 .linkedin-card:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
-    border-color: #0077B5;
+    border-color: #0056D3;
 }
 
 .linkedin-icon {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     background: #0077B5;
     color: var(--white);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-xl);
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 700;
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-xl);
     font-family: Georgia, serif;
+    flex-shrink: 0;
 }
 
 .linkedin-text h3 {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-xl);
     font-weight: 600;
     color: var(--gray-900);
     margin: 0 0 var(--spacing-1) 0;
@@ -984,6 +985,7 @@ body {
     font-size: var(--font-size-base);
     color: var(--gray-600);
     margin: 0;
+    font-weight: 500;
 }
 
 /* Footer */
