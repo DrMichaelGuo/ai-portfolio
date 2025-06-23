@@ -904,6 +904,23 @@ body {
     font-size: var(--font-size-sm);
     color: var(--gray-500);
     font-style: italic;
+    margin-bottom: var(--spacing-4);
+}
+
+.publication-button {
+    margin-top: var(--spacing-4);
+    text-align: center;
+}
+
+.publication-button .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-2);
+}
+
+.publication-button .btn:before {
+    content: "📖";
+    font-size: var(--font-size-sm);
 }
 
 /* Contact Section */
