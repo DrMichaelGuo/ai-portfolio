@@ -122,6 +122,17 @@ body {
     height: 70px;
 }
 
+.nav-logo .logo-link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.nav-logo .logo-link:hover {
+    opacity: 0.8;
+}
+
 .nav-logo .logo-container {
     display: flex;
     flex-direction: column;
