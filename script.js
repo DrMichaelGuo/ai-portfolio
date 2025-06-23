@@ -15,8 +15,8 @@ document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', 
 
 // Dynamic counter animation for projects and books
 function countProjectsAndBooks() {
-    // Set projects count to 15 as requested
-    const projectsCount = 15;
+    // Set projects count to ??? as requested
+    const projectsCount = 14;
     
     // Count textbooks (always 2 as specified)
     const textbooksCount = 2;
