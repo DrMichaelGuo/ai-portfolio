@@ -24,8 +24,8 @@ function countProjectsAndBooks() {
     // Calculate total count of all cards
     const projectsCount = projectCards + aitaCards + overviewCards + gameCards;
     
-    // Count textbooks (always 2 as specified)
-    const textbooksCount = 2;
+    // Count textbooks by dynamically counting publication cards
+    const textbooksCount = document.querySelectorAll('.publication-card').length;
     
     // Animate counters
     animateCounter('projects-count', projectsCount);
